@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drei Entwürfe für Ihre Website</title>
+  <meta name="description" content="Drei kurze Website-Entwürfe für die Ernährungsberatung Fischer.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #F4F1EA;
+      --ink: #191D1B;
+      --soft: #5C665F;
+      --line: #E0DACE;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.6 "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    main { max-width: 1060px; margin: 0 auto; padding: clamp(40px, 7vw, 88px) clamp(20px, 5vw, 40px) 72px; }
+
+    .eyebrow {
+      margin: 0 0 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--soft); display: flex; align-items: center; gap: 10px;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .5; }
+    h1 {
+      margin: 0 0 18px; font-size: clamp(2rem, 5.4vw, 3.4rem); line-height: 1.04;
+      letter-spacing: -0.03em; font-weight: 600; max-width: 16ch;
+    }
+    .lead { margin: 0 0 14px; color: var(--soft); max-width: 56ch; font-size: clamp(1rem, 1.5vw, 1.12rem); }
+    .hint { margin: 0 0 clamp(32px, 5vw, 52px); color: var(--soft); font-size: 14px; opacity: .8; }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr)); }
+    .card {
+      display: flex; flex-direction: column; justify-content: space-between;
+      text-decoration: none; color: inherit; border-radius: 20px;
+      padding: 26px 24px 22px; min-height: 262px; position: relative; overflow: hidden;
+      box-shadow: 0 8px 30px rgba(25,29,27,.09);
+      transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s cubic-bezier(.2,.7,.2,1);
+    }
+    .card:hover, .card:focus-visible { transform: translateY(-6px); box-shadow: 0 22px 54px rgba(25,29,27,.17); outline: none; }
+    .card .no { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .62; }
+    .card h2 { margin: 12px 0 8px; font-size: 1.75rem; line-height: 1.02; letter-spacing: -0.02em; font-weight: 600; }
+    .card p { margin: 0; font-size: 14.5px; line-height: 1.5; opacity: .88; }
+    .go { margin-top: 20px; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+    .go i { font-style: normal; transition: transform .4s cubic-bezier(.2,.7,.2,1); display: inline-block; }
+    .card:hover .go i { transform: translateX(5px); }
+
+    .one { background: #F3EDE2; color: #1B2A21; }
+    .one h2 { font-family: Georgia, "Times New Roman", serif; color: #B94E29; font-weight: 400; }
+    .one .go { color: #B94E29; }
+    .two { background: #0B0F1A; color: #F4F1EA; }
+    .two h2 { text-transform: uppercase; letter-spacing: -0.01em; color: #FF9F3D; font-weight: 600; }
+    .two .go { color: #FF9F3D; }
+    .three { background: #FFFDF9; color: #1F2421; border: 1px solid var(--line); }
+    .three h2 { color: #E8563A; }
+    .three .go { color: #E8563A; }
+
+    /* a quiet living detail per card, so the cover page moves too */
+    .blob { position: absolute; border-radius: 50%; filter: blur(26px); opacity: .5; pointer-events: none; }
+    .one .blob { width: 150px; height: 150px; background: #E2B98E; right: -34px; bottom: -42px; animation: float1 13s ease-in-out infinite; }
+    .two .blob { width: 170px; height: 170px; background: #FF9F3D; right: -46px; top: -50px; opacity: .32; animation: float2 16s ease-in-out infinite; }
+    .three .blob { width: 160px; height: 160px; background: #FFC3B4; right: -40px; bottom: -46px; animation: float1 15s ease-in-out infinite; }
+    @keyframes float1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-16px,-14px) scale(1.1); } }
+    @keyframes float2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-20px,16px) scale(1.12); } }
+
+    .notes {
+      margin-top: clamp(40px, 6vw, 64px); padding-top: 26px; border-top: 1px solid var(--line);
+      display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      font-size: 14px; color: var(--soft); max-width: 92ch;
+    }
+    .notes p { margin: 0; }
+    .notes b { color: var(--ink); font-weight: 600; }
+
+    .rise { opacity: 0; transform: translateY(18px); animation: rise .85s cubic-bezier(.2,.7,.2,1) forwards; }
+    .d1 { animation-delay: .05s } .d2 { animation-delay: .13s } .d3 { animation-delay: .21s }
+    .d4 { animation-delay: .30s } .d5 { animation-delay: .38s } .d6 { animation-delay: .46s } .d7 { animation-delay: .56s }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise { animation: none; opacity: 1; transform: none; }
+      .blob { animation: none; }
+      .card, .go i { transition: none; }
+    }
+  </style>
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <main>
+    <p class="eyebrow rise d1">Entwürfe für Ihre Ernährungsberatung</p>
+    <h1 class="rise d2">Drei Richtungen, damit Sie sehen, was möglich ist.</h1>
+    <p class="lead rise d3">Jeder Entwurf ist bewusst anders: andere Farben, andere Schrift, anderer Aufbau, andere Bewegung. Öffnen Sie einen und scrollen Sie einmal langsam durch. Es geht nur darum, welche Richtung sich für Sie richtig anfühlt.</p>
+    <p class="hint rise d3">Drei kurze Seiten, je etwa eine Minute. Am schönsten am Laptop, geht aber auch am Handy.</p>
+
+    <div class="grid">
+      <a class="card one rise d4" href="01-marktfrisch/">
+        <span class="blob"></span>
+        <span class="no">Entwurf 1</span>
+        <div>
+          <h2>Marktfrisch</h2>
+          <p>Warm und ruhig wie ein gutes Kochmagazin. Frisches Gemüse schwebt um die Überschrift, und ein Teller am Rand füllt sich, während Sie lesen.</p>
+        </div>
+        <span class="go">Ansehen <i>&rsaquo;</i></span>
+      </a>
+      <a class="card two rise d5" href="02-wach/">
+        <span class="blob"></span>
+        <span class="no">Entwurf 2</span>
+        <div>
+          <h2>Wach</h2>
+          <p>Mutig und plakativ. Ein riesiges Wort mit Video in den Buchstaben: aus MÜDE? wird WACH., und die ganze Seite wird dabei von Nacht zu Tag.</p>
+        </div>
+        <span class="go">Ansehen <i>&rsaquo;</i></span>
+      </a>
+      <a class="card three rise d6" href="03-mein-tag/">
+        <span class="blob"></span>
+        <span class="no">Entwurf 3</span>
+        <div>
+          <h2>Mein Tag</h2>
+          <p>Hell und freundlich. Das Video läuft mit, während Sie scrollen. Die Seite fragt nach Ihrem typischen Mittag und antwortet passend darauf.</p>
+        </div>
+        <span class="go">Ansehen <i>&rsaquo;</i></span>
+      </a>
+    </div>
+
+    <div class="notes rise d7">
+      <p><b>Das ist ein erster Eindruck, kein fertiges Produkt.</b> Es geht um Gefühl, Farbe und Bewegung, noch nicht um die richtigen Inhalte.</p>
+      <p><b>Alle Texte und Bilder sind Platzhalter.</b> Name, Qualifikation, Kontakt und sämtliche Fotos und Videos sind Beispielmaterial. Später kommen Ihre Fotos und Ihre Worte hinein.</p>
+      <p><b>Die Entwürfe sagen Du zu den Besuchern.</b> Wenn Sie lieber Sie sagen möchten, ändern wir das überall.</p>
+      <p><b>Die Buttons sind noch ohne Funktion.</b> Auf der echten Seite führen sie zu Ihrem Kalender oder direkt zu Ihnen.</p>
+    </div>
+  </main>
+</body>
+</html>

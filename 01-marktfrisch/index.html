@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marktfrisch. Ernährungsberatung Fischer</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3EDE2;
+  --paper-deep:#E9E0D0;
+  --ink:#1B2A21;
+  --ink-soft:#5E6B62;
+  --terracotta:#C4552D;
+  --sage:#7A9678;
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-text:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --pw:140px; --pr:40px; --pb:40px;
+  --gut:clamp(20px,7vw,104px);
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-text);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#smooth-wrapper{overflow:hidden;position:relative}
+img{display:block}
+a{color:inherit}
+h1,h2,h3,p,ol,figure,blockquote{margin:0}
+::selection{background:var(--terracotta);color:var(--paper)}
+:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px;border-radius:2px}
+.ch2 :focus-visible{outline-color:#E8A98C}
+
+/* ---------------- chapter 1: title page ---------------- */
+.ch1{position:relative;min-height:100vh;overflow:hidden;padding:0 var(--gut)}
+.wordmark{position:absolute;left:var(--gut);top:clamp(24px,4.4vh,46px);z-index:6;font-weight:500;font-size:14px;letter-spacing:.02em;color:var(--ink)}
+.hero-inner{position:relative;z-index:3;min-height:100vh;display:flex;flex-direction:column;justify-content:center;max-width:940px;padding:14vh 0 20vh}
+h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.35rem,5.05vw,4.7rem);line-height:1.08;letter-spacing:-.021em;max-width:17ch;font-variation-settings:"opsz" 120}
+.context{margin-top:clamp(20px,2.6vh,30px);max-width:52ch;font-size:1.05rem;line-height:1.55;color:var(--ink);opacity:.9}
+.proof{margin-top:clamp(16px,2.2vh,26px);font-size:12.5px;font-weight:500;letter-spacing:.055em;text-transform:uppercase;color:#5F7C5D;line-height:1.7;max-width:40ch}
+.cta-block{margin-top:clamp(18px,2.6vh,30px)}
+.cta{display:inline-flex;align-items:center;height:52px;padding:0 28px;background:var(--terracotta);color:#FFF7EF;font-family:var(--font-text);font-weight:600;font-size:1rem;letter-spacing:.005em;text-decoration:none;border:0;border-radius:4px;cursor:pointer;box-shadow:0 8px 20px rgba(120,48,20,.16);transition:transform .14s var(--ease),box-shadow .18s var(--ease),background-color .18s var(--ease)}
+.cta:hover{background:#B24923;box-shadow:0 12px 28px rgba(120,48,20,.24)}
+.cta:active{transform:translateY(1px)}
+.micro{margin-top:11px;font-size:13px;color:var(--ink-soft)}
+.planes{position:absolute;inset:0;pointer-events:none}
+.pl{position:absolute;inset:0;will-change:transform}
+#pl-far{z-index:1;opacity:.9;filter:blur(.9px)}
+#pl-mid{z-index:2}
+#pl-near{z-index:4}
+.cut{position:absolute;left:var(--l);top:var(--t);width:var(--w);will-change:transform}
+.cut .fl{display:block;will-change:transform}
+.cut img{width:100%;height:auto;max-width:none}
+.c-herbs{--l:88%;--t:4%;--w:118px}
+.c-radish{--l:3%;--t:70%;--w:186px}
+.c-lemon{--l:78%;--t:48%;--w:238px}
+.c-berries{--l:26%;--t:3%;--w:158px}
+.c-tomato{--l:52%;--t:24%;--w:248px}
+.c-avocado{--l:33%;--t:60%;--w:152px}
+.c-straw{--l:64%;--t:64%;--w:122px}
+.cut-in{position:absolute;left:0;right:0;bottom:0;height:100%;z-index:7;background:var(--ink);clip-path:inset(100% 0% 0% 0%);pointer-events:none;will-change:clip-path}
+.ch1-floor{position:absolute;left:0;right:0;bottom:0;height:150px;z-index:5;pointer-events:none;background:linear-gradient(to bottom,rgba(243,237,226,0),var(--paper) 78%)}
+
+/* ---------------- chapter 2: the method ---------------- */
+.ch2{position:relative;min-height:100vh;background:var(--ink);color:var(--paper);overflow:hidden;padding:clamp(48px,9vh,96px) var(--gut) clamp(48px,9vh,96px)}
+.ch2-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);column-gap:clamp(32px,5.4vw,88px);align-items:start;max-width:1420px;margin:0 auto;padding-right:clamp(0px,10vw,176px)}
+.ch2 h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2.1rem,3.35vw,3.1rem);line-height:1.1;letter-spacing:-.018em;max-width:14ch;font-variation-settings:"opsz" 90}
+.ch2-intro{margin-top:clamp(16px,2.4vh,26px);max-width:50ch;font-size:1.02rem;line-height:1.62;color:#DED8CB}
+.steps{list-style:none;padding:0;margin:clamp(26px,4.4vh,46px) 0 0}
+.steps li{position:relative;padding-top:18px;margin-top:18px;display:grid;grid-template-columns:26px 1fr;column-gap:14px;will-change:transform}
+.rule{position:absolute;left:0;right:0;top:0;height:1px;background:rgba(243,237,226,.34);transform-origin:0 50%}
+.num{font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.7;color:var(--sage)}
+.steps h3{font-family:var(--font-text);font-weight:600;font-size:1.02rem;line-height:1.55;letter-spacing:.005em}
+.steps p{margin-top:3px;font-size:.965rem;line-height:1.6;color:#D5CFC2;max-width:44ch}
+.frame{position:relative;margin-top:clamp(0px,9vh,94px);width:100%;max-width:520px;aspect-ratio:5/6;overflow:hidden;border-radius:3px;background:#14201A;will-change:clip-path}
+.frame img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;max-width:none;will-change:transform}
+.cap{margin-top:12px;max-width:42ch;font-size:13px;line-height:1.5;color:rgba(243,237,226,.7)}
+
+/* ---------------- spacer + chapter 3: the close ---------------- */
+#spacer{height:32vh;background:var(--paper)}
+.ch3{position:relative;min-height:100vh;background:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gut) clamp(34px,6vh,60px);text-align:center}
+.close-inner{max-width:640px;margin:0 auto;width:100%}
+.ch3 h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.85rem,3vw,2.4rem);line-height:1.12;letter-spacing:-.018em}
+.close-cta{margin-top:clamp(14px,2vh,20px);font-size:clamp(1.02rem,1.35vw,1.25rem);line-height:1.5;color:var(--ink)}
+#cta-close{font-weight:600;color:var(--terracotta);text-decoration:none;background-image:linear-gradient(var(--terracotta),var(--terracotta));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;padding-bottom:3px;transition:background-size .22s var(--ease),color .18s var(--ease)}
+#cta-close:hover{background-size:100% 6px;color:#B24923}
+.friction{margin-top:12px;font-size:14px;line-height:1.55;color:var(--ink-soft);max-width:56ch;margin-left:auto;margin-right:auto}
+.testi{margin-top:clamp(20px,3vh,32px);padding:20px 22px;background:var(--paper-deep);border-radius:4px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto}
+.tag{display:inline-block;margin-bottom:8px;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4F6B4D}
+.testi p{font-size:.98rem;line-height:1.55;color:var(--ink)}
+.testi cite{display:block;margin-top:7px;font-style:normal;font-size:13px;color:var(--ink-soft)}
+.masthead{margin-top:clamp(18px,2.6vh,28px);font-size:12px;letter-spacing:.02em;color:#5F7C5D}
+
+/* ---------------- the plate: fixed chrome ---------------- */
+.plate-stage{position:fixed;right:var(--pr);bottom:var(--pb);width:var(--pw);height:var(--pw);z-index:60;will-change:transform}
+.plate{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 10px 16px rgba(27,42,33,.22))}
+.ing{position:absolute;left:var(--l);top:var(--t);width:var(--w);display:block;line-height:0;padding:0;margin:0;border:0;background:none;cursor:pointer;opacity:0}
+.ing img{width:100%;height:auto;max-width:none;pointer-events:none}
+.ing-sh{position:absolute;left:10%;right:10%;bottom:-4%;height:26%;border-radius:50%;background:rgba(27,42,33,.34);filter:blur(5px);opacity:0}
+.i-tomato{--l:43%;--t:44%;--w:33%}
+.i-avocado{--l:66%;--t:41%;--w:23%}
+.i-herbs{--l:54%;--t:31%;--w:15%}
+.i-berries{--l:65%;--t:60%;--w:21%}
+.i-radish{--l:50%;--t:68%;--w:23%}
+.i-lemon{--l:34%;--t:62%;--w:27%}
+.plate-tip{position:fixed;right:calc(var(--pr) + var(--pw) + 14px);bottom:calc(var(--pb) + var(--pw)/2 - 9px);z-index:61;max-width:240px;font-size:11px;font-weight:500;letter-spacing:.03em;line-height:1.5;text-align:right;color:var(--ink);opacity:0;pointer-events:none}
+.ch2-active .plate-tip{color:var(--paper)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------------- phone ---------------- */
+@media (max-width:767px){
+  :root{--pw:84px;--pr:14px;--pb:14px}
+  body{font-size:16px}
+  .hero-inner{padding:15vh 0 24vh;max-width:none}
+  h1{font-size:clamp(2.2rem,10vw,3rem);max-width:13ch;line-height:1.1}
+  .context{font-size:1rem;max-width:34ch}
+  .proof{font-size:11.5px;letter-spacing:.045em;max-width:36ch}
+  .cta{height:54px;padding:0 24px;font-size:.97rem}
+  .c-herbs{--l:75%;--t:4%;--w:76px}
+  .c-lemon{--l:2%;--t:79%;--w:124px}
+  .c-tomato{--l:44%;--t:70%;--w:162px}
+  .c-radish,.c-berries,.c-avocado,.c-straw{display:none}
+  .ch2-grid{grid-template-columns:1fr;padding-right:0}
+  .frame{margin-top:34px;max-width:none;aspect-ratio:4/3}
+  .ch2{padding-top:9vh;padding-bottom:10vh}
+  #spacer{height:14vh}
+  .ch3{padding-bottom:26px}
+  .testi{padding:16px 18px}
+  .plate-tip{display:none}
+}
+</style>
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<div class="plate-tip" id="plate-tip" aria-hidden="true"></div>
+<div class="plate-stage" id="plate-stage">
+  <img class="plate" src="assets/cutouts/plate.png" alt="" aria-hidden="true">
+  <nav aria-label="Kapitel">
+    <button class="ing i-tomato"  data-go="#ch1" data-tip="Wieder Energie. Ohne Diät, ohne Verzicht."><span class="ing-sh"></span><img src="assets/cutouts/tomato.png" alt="Wieder Energie. Ohne Diät, ohne Verzicht."></button>
+    <button class="ing i-avocado" data-go="#ch2" data-tip="Kein Plan von der Stange."><span class="ing-sh"></span><img src="assets/cutouts/avocado.png" alt="Kein Plan von der Stange."></button>
+    <button class="ing i-radish"  data-go="#ch2" data-tip="Kein Plan von der Stange."><span class="ing-sh"></span><img src="assets/cutouts/radish.png" alt="Kein Plan von der Stange."></button>
+    <button class="ing i-herbs"   data-go="#ch2" data-tip="Kein Plan von der Stange."><span class="ing-sh"></span><img src="assets/cutouts/herbs.png" alt="Kein Plan von der Stange."></button>
+    <button class="ing i-lemon"   data-go="#ch2" data-tip="Kein Plan von der Stange."><span class="ing-sh"></span><img src="assets/cutouts/lemon.png" alt="Kein Plan von der Stange."></button>
+    <button class="ing i-berries" data-go="#ch3" data-tip="Dein Teller. Dein Plan."><span class="ing-sh"></span><img src="assets/cutouts/berries.png" alt="Dein Teller. Dein Plan."></button>
+  </nav>
+</div>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+
+  <header class="ch1" id="ch1">
+    <p class="wordmark">Ernährungsberatung Fischer</p>
+
+    <div class="planes" aria-hidden="true">
+      <div class="pl" id="pl-far">
+        <div class="cut c-herbs"><span class="fl"><img src="assets/cutouts/herbs.png" alt=""></span></div>
+        <div class="cut c-berries"><span class="fl"><img src="assets/cutouts/berries.png" alt=""></span></div>
+      </div>
+      <div class="pl" id="pl-mid">
+        <div class="cut c-lemon"><span class="fl"><img src="assets/cutouts/lemon.png" alt=""></span></div>
+        <div class="cut c-radish"><span class="fl"><img src="assets/cutouts/radish.png" alt=""></span></div>
+      </div>
+      <div class="pl" id="pl-near">
+        <div class="cut c-tomato"><span class="fl"><img src="assets/cutouts/tomato.png" alt=""></span></div>
+        <div class="cut c-avocado"><span class="fl"><img src="assets/cutouts/avocado.png" alt=""></span></div>
+        <div class="cut c-straw"><span class="fl"><img src="assets/cutouts/strawberry.png" alt=""></span></div>
+      </div>
+    </div>
+
+    <div class="hero-inner">
+      <h1 id="h1">Wieder Energie.<br>Ohne Diät, ohne Verzicht.</h1>
+      <p class="context" data-in>Ernährungsberatung 1:1 mit Anna Fischer, vor Ort und online. Ein Plan für deinen Alltag statt Regeln für zwei Wochen.</p>
+      <p class="proof" data-in>Zertifizierte Ernährungsberaterin · Vor Ort und online · Erstgespräch kostenlos</p>
+      <div class="cta-block" data-in>
+        <a class="cta" id="cta-primary" href="mailto:hallo@fischer-ernaehrung.de?subject=Kostenloses%20Erstgespr%C3%A4ch">Kostenloses Erstgespräch buchen</a>
+        <p class="micro">30 Minuten, unverbindlich.</p>
+      </div>
+    </div>
+
+    <div class="ch1-floor" aria-hidden="true"></div>
+    <div class="cut-in" id="cut-in" aria-hidden="true"></div>
+  </header>
+
+  <section class="ch2" id="ch2">
+    <div class="ch2-grid">
+      <div class="ch2-text">
+        <div id="ch2-head-in">
+        <h2 id="ch2-title">Kein Plan von der Stange.</h2>
+        <p class="ch2-intro">Du bekommst keine Liste mit Verboten. Du bekommst einen Plan, der zu deiner Woche passt: zu deinem Job, deiner Familie, deinem Dienstagabend um 18 Uhr.</p>
+        </div>
+        <ol class="steps">
+          <li id="step-1"><span class="rule" aria-hidden="true"></span><span class="num" aria-hidden="true">1</span><div><h3>Erstgespräch.</h3><p>30 Minuten. Wir schauen, wie dein Alltag wirklich aussieht, nicht wie er aussehen sollte.</p></div></li>
+          <li id="step-2"><span class="rule" aria-hidden="true"></span><span class="num" aria-hidden="true">2</span><div><h3>Dein Plan.</h3><p>Essen, das du magst, in Mengen, die zu dir passen. Einkaufen und Kochen inklusive, ohne Kalorienzählen.</p></div></li>
+          <li id="step-3"><span class="rule" aria-hidden="true"></span><span class="num" aria-hidden="true">3</span><div><h3>Begleitung.</h3><p>Jede Woche ein kurzer Check-in, bis es von allein läuft. Du schreibst mir, nicht einer App.</p></div></li>
+        </ol>
+      </div>
+      <figure class="ch2-media" id="ch2-media">
+        <div class="frame"><img src="assets/kitchen.jpg" width="1600" height="1060" alt="Hände schneiden frische Kräuter auf einem Holzbrett in einer hellen Küche."></div>
+        <figcaption class="cap">Gekocht in 20 Minuten. Nichts davon ist verboten.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div id="spacer" aria-hidden="true"></div>
+
+  <section class="ch3" id="ch3">
+    <div class="close-inner">
+      <h2>Dein Teller. Dein Plan.</h2>
+      <p class="close-cta">Lass uns 30 Minuten reden: <a id="cta-close" href="mailto:hallo@fischer-ernaehrung.de?subject=Kostenloses%20Erstgespr%C3%A4ch">Kostenloses Erstgespräch buchen</a></p>
+      <p class="friction">30 Minuten, unverbindlich. Du bekommst eine ehrliche Einschätzung, auch wenn wir danach nicht zusammenarbeiten.</p>
+      <blockquote class="testi">
+        <span class="tag">Beispieltext</span>
+        <p>„Nach drei Wochen habe ich nachmittags keinen Heißhunger mehr. Und ich habe nichts weggelassen, was ich mag.“</p>
+        <cite>Kundin, 42</cite>
+      </blockquote>
+      <p class="masthead">Ernährungsberatung Fischer · Vor Ort und online · hallo@fischer-ernaehrung.de (Platzhalter)</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/ScrollSmoother.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../vendor/gsap/ScrollToPlugin.min.js"></script>
+<script src="../vendor/gsap/CustomEase.min.js"></script>
+<script src="../vendor/anime.umd.min.js"></script>
+<script>
+(() => {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, ScrollToPlugin, CustomEase);
+  CustomEase.create('drop', 'M0,0 C0.16,0 0.3,1.14 0.52,1.06 0.68,1 0.84,0.985 1,1');
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine   = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  const smoother = ScrollSmoother.create({
+    wrapper: '#smooth-wrapper',
+    content: '#smooth-content',
+    smooth: reduce ? 0 : 1.1,
+    effects: false,
+    smoothTouch: 0.1,
+    normalizeScroll: false,
+  });
+
+  /* ============ the plate: fixed chrome, six landing points ============ */
+  const stage = document.getElementById('plate-stage');
+  const tip   = document.getElementById('plate-tip');
+  const ings  = {};
+  document.querySelectorAll('.ing').forEach(el => {
+    ings[el.className.match(/i-(\w+)/)[1]] = { el, sh: el.querySelector('.ing-sh'), img: el.querySelector('img'), landed: false };
+  });
+  const ORDER = ['tomato', 'avocado', 'radish', 'herbs', 'lemon', 'berries'];
+  Object.values(ings).forEach(o => gsap.set(o.el, { xPercent: -50, yPercent: -50 }));
+
+  let travelled = 0;
+
+  function land(name) {
+    const o = ings[name];
+    if (!o || o.landed) return;
+    o.landed = true;
+    if (reduce) { gsap.set(o.el, { opacity: 1 }); gsap.set(o.sh, { opacity: .2 }); return; }
+    gsap.set(o.el, { opacity: 1 });
+    gsap.fromTo(o.img, { y: -62, scale: 1.16, rotate: -7, opacity: 0 },
+      { y: 0, scale: 1, rotate: 0, opacity: 1, duration: .58, ease: 'drop' });
+    gsap.fromTo(o.sh, { scale: 1.9, opacity: 0 },
+      { scale: 1, opacity: .22, duration: .58, ease: 'power2.out' });
+  }
+  if (reduce) ORDER.forEach(land);
+
+  /* plate doubles as navigation */
+  document.querySelectorAll('.ing').forEach(el => {
+    el.addEventListener('click', () => {
+      const t = document.querySelector(el.dataset.go);
+      if (t) smoother.scrollTo(t, !reduce, 'top top');
+    });
+    if (fine) {
+      el.addEventListener('pointerenter', () => {
+        if (travelled > 0.02) return;
+        tip.textContent = el.dataset.tip;
+        gsap.to(tip, { opacity: 1, duration: .18, ease: 'power2.out' });
+      });
+      el.addEventListener('pointerleave', () => gsap.to(tip, { opacity: 0, duration: .18 }));
+    }
+  });
+
+  /* plate travel to centre stage across the quiet spacer */
+  const travel = { x: 0, y: 0, s: 1 };
+  function travelTargets() {
+    const cs = getComputedStyle(document.documentElement);
+    const pw = parseFloat(cs.getPropertyValue('--pw'));
+    const pr = parseFloat(cs.getPropertyValue('--pr'));
+    const pb = parseFloat(cs.getPropertyValue('--pb'));
+    const W = window.innerWidth, H = window.innerHeight;
+    const phone = W < 768;
+    const cx0 = W - pr - pw / 2, cy0 = H - pb - pw / 2;
+    travel.x = W / 2 - cx0;
+    travel.y = H * (phone ? 0.28 : 0.33) - cy0;
+    travel.s = (phone ? 210 : 360) / pw;
+  }
+  travelTargets();
+
+  /* ============ hero ============ */
+  const heroPlanes = [
+    { el: '#pl-far',  rate: 0.72, pp: 4 },
+    { el: '#pl-mid',  rate: 0.86, pp: 9 },
+    { el: '#pl-near', rate: 1.12, pp: 16 },
+  ];
+
+  if (!reduce) {
+    /* dimensional layering: three plane rates on scroll */
+    heroPlanes.forEach(p => {
+      gsap.to(p.el, {
+        y: () => (1 - p.rate) * window.innerHeight,
+        ease: 'none',
+        scrollTrigger: { trigger: '#ch1', start: 'top top', end: 'bottom top', scrub: 0.8, invalidateOnRefresh: true },
+      });
+    });
+    /* ambient: every cutout floats on its own slow loop */
+    gsap.utils.toArray('.cut .fl').forEach((el, i) => {
+      gsap.to(el, {
+        y: gsap.utils.random(6, 12) * (i % 2 ? -1 : 1),
+        rotation: gsap.utils.random(1, 3) * (i % 3 ? 1 : -1),
+        duration: gsap.utils.random(4, 7),
+        yoyo: true, repeat: -1, ease: 'sine.inOut', delay: i * 0.28,
+      });
+    });
+    /* pointer parallax, desktop only */
+    if (fine) {
+      const q = heroPlanes.map(p => {
+        const items = gsap.utils.toArray(p.el + ' .cut');
+        return { amp: p.pp, x: items.map(el => gsap.quickTo(el, 'x', { duration: .6, ease: 'power3' })), y: items.map(el => gsap.quickTo(el, 'y', { duration: .6, ease: 'power3' })) };
+      });
+      window.addEventListener('pointermove', e => {
+        const nx = (e.clientX / window.innerWidth - .5) * 2, ny = (e.clientY / window.innerHeight - .5) * 2;
+        q.forEach(p => { p.x.forEach(f => f(-nx * p.amp)); p.y.forEach(f => f(-ny * p.amp * .6)); });
+      }, { passive: true });
+    }
+  }
+
+  function chapterCuts() {
+    if (reduce) return;
+    gsap.fromTo('#cut-in', { clipPath: 'inset(100% 0% 0% 0%)' }, {
+      clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
+      scrollTrigger: { trigger: '#ch1', start: '52% top', end: 'bottom top', scrub: .5 },
+    });
+    gsap.from('#ch2-head-in', { y: 26, opacity: 0, duration: .8, ease: 'power3.out',
+      scrollTrigger: { trigger: '#ch2', start: 'top 80%' } });
+    gsap.fromTo('.frame', { clipPath: 'inset(0% 100% 0% 0%)' }, {
+      clipPath: 'inset(0% 0% 0% 0%)', duration: 1.05, ease: 'power3.inOut',
+      scrollTrigger: { trigger: '#ch2', start: 'top 58%' } });
+    gsap.from('.cap', { opacity: 0, y: 14, duration: .6, ease: 'power2.out',
+      scrollTrigger: { trigger: '#ch2', start: 'top 30%' } });
+    gsap.from('.close-inner > *', { y: 26, opacity: 0, duration: .85, ease: 'power3.out', stagger: .07,
+      scrollTrigger: { trigger: '#ch3', start: 'top 58%' } });
+    gsap.from('#step-1 .rule', { scaleX: 0, duration: .8, ease: 'power2.out',
+      scrollTrigger: { trigger: '#ch2', start: 'top 46%' } });
+    gsap.from('#step-1 > .num, #step-1 > div', { y: 26, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1,
+      scrollTrigger: { trigger: '#ch2', start: 'top 46%', onEnter: () => land('avocado') } });
+  }
+
+  function heroEntrance() {
+    if (reduce) { land('tomato'); return; }
+    SplitText.create('#h1', {
+      type: 'lines', mask: 'lines', autoSplit: true, linesClass: 'h1-line',
+      onSplit(self) {
+        return gsap.from(self.lines, { yPercent: 112, duration: 1.0, ease: 'power3.out', stagger: .09 });
+      },
+    });
+    gsap.from('[data-in]', { y: 20, opacity: 0, duration: .7, ease: 'power3.out', stagger: .08, delay: .34 });
+    gsap.from('.wordmark', { opacity: 0, duration: .6, ease: 'power2.out', delay: .1 });
+    gsap.from('.cut', { scale: .9, opacity: 0, y: 26, duration: .8, ease: 'back.out(1.4)', stagger: .06, delay: .12 });
+    gsap.delayedCall(.95, () => land('tomato'));
+  }
+
+  /* ============ chapters 2 and 3 ============ */
+  const mm = gsap.matchMedia();
+
+  /* desktop: chapter 2 is one pinned act with a hard cut in and a hard cut out */
+  mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#ch2', start: 'top top', end: '+=170%', pin: true, pinSpacing: true, scrub: .85,
+        onUpdate(self) {
+          const p = self.progress;
+          document.body.classList.toggle('ch2-active', p > .12 && p < .88);
+          if (p > .14) land('radish');
+          if (p > .42) land('herbs');
+          if (p > .64) land('lemon');
+        },
+        onLeaveBack() { document.body.classList.remove('ch2-active'); },
+      },
+    });
+    tl.fromTo('.frame img', { yPercent: 7 }, { yPercent: -7, ease: 'none', duration: .95 }, 0)
+      .fromTo('.ch2-text', { y: 0 }, { y: -26, ease: 'none', duration: .95 }, 0)
+      .fromTo('.ch2-media', { y: 0 }, { y: 34, ease: 'none', duration: .95 }, 0);
+    ['#step-2', '#step-3'].forEach((s, i) => {
+      tl.from(s + ' .rule', { scaleX: 0, ease: 'power2.out', duration: .1 }, .06 + i * .3)
+        .from(s + ' > .num, ' + s + ' > div', { y: 26, opacity: 0, ease: 'power3.out', duration: .13, stagger: .05 }, .08 + i * .3);
+    });
+    const cut = gsap.fromTo('#ch2', { clipPath: 'inset(0% 0% 0% 0%)' }, {
+      clipPath: 'inset(0% 100% 0% 0%)', ease: 'power2.in', immediateRender: false,
+      scrollTrigger: { trigger: '#spacer', start: 'top bottom', end: 'top 70%', scrub: .55 },
+    });
+    return () => { cut.scrollTrigger && cut.scrollTrigger.kill(); cut.kill(); document.body.classList.remove('ch2-active'); };
+  });
+
+  /* phone: same beats, no pin, nothing trapped */
+  mm.add('(max-width: 767px) and (prefers-reduced-motion: no-preference)', () => {
+    ScrollTrigger.create({
+      trigger: '#ch2', start: 'top 60%', end: 'bottom 20%',
+      onToggle: self => document.body.classList.toggle('ch2-active', self.isActive),
+    });
+    ['#step-2', '#step-3'].forEach((s, i) => {
+      const name = ['radish', 'herbs'][i];
+      gsap.from(s + ' .rule', { scaleX: 0, duration: .7, ease: 'power2.out', scrollTrigger: { trigger: s, start: 'top 86%' } });
+      gsap.from(s + ' > .num, ' + s + ' > div', {
+        y: 24, opacity: 0, duration: .7, ease: 'power3.out', stagger: .12,
+        scrollTrigger: { trigger: s, start: 'top 86%', onEnter: () => land(name) },
+      });
+    });
+    ScrollTrigger.create({ trigger: '.frame', start: 'top 80%', once: true, onEnter: () => land('lemon') });
+    gsap.fromTo('.frame img', { yPercent: 4 }, { yPercent: -4, ease: 'none', scrollTrigger: { trigger: '.frame', start: 'top bottom', end: 'bottom top', scrub: .6 } });
+    gsap.fromTo('#ch2', { clipPath: 'inset(0% 0% 0% 0%)' }, {
+      clipPath: 'inset(0% 100% 0% 0%)', ease: 'power2.in', immediateRender: false,
+      scrollTrigger: { trigger: '#spacer', start: 'top bottom', end: 'top 40%', scrub: .55 },
+    });
+    return () => document.body.classList.remove('ch2-active');
+  });
+
+  /* the peak: the plate leaves the margin and takes centre stage */
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    const st = ScrollTrigger.create({
+      trigger: '#spacer', start: 'top bottom', endTrigger: '#ch3', end: 'top top', scrub: .7,
+      invalidateOnRefresh: true,
+      onUpdate(self) {
+        travelled = self.progress;
+        const e = gsap.parseEase('power2.out')(travelled);
+        gsap.set(stage, { x: travel.x * e, y: travel.y * e, scale: 1 + (travel.s - 1) * e, rotate: -7 * e, transformOrigin: '50% 50%' });
+        if (travelled > 0.02) gsap.set(tip, { opacity: 0 });
+        if (travelled > 0.58) { land('berries'); settle(); }
+      },
+    });
+    return () => { st.kill(); gsap.set(stage, { clearProps: 'transform' }); travelled = 0; };
+  });
+
+  /* anime.js: the composed dish settles once, when the plate arrives */
+  let settled = false;
+  function settle() {
+    if (settled || reduce || typeof anime === 'undefined' || !anime.animate) return;
+    settled = true;
+    try {
+      anime.animate(ORDER.map(n => ings[n].img), {
+        scale: [{ to: 1.055, duration: 190, ease: 'outQuad' }, { to: 1, duration: 520, ease: 'outElastic(1, .55)' }],
+        delay: anime.stagger(52),
+      });
+    } catch (e) { /* the page does not depend on this flourish */ }
+  }
+
+  /* ============ boot ============ */
+  function refreshAll() { travelTargets(); ScrollTrigger.refresh(); }
+  document.fonts.ready.then(() => { heroEntrance(); chapterCuts(); refreshAll(); });
+  window.addEventListener('load', refreshAll);
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(refreshAll, 180); });
+})();
+</script>
+
+<a href="../" class="zz-back" aria-label="Zurück zur Übersicht">&lsaquo;&nbsp; Übersicht</a>
+<style>
+.zz-back{position:fixed;top:18px; right:18px;z-index:9999;background:rgba(255,253,248,.9); color:#1B2A21; border:1px solid rgba(27,42,33,.14);
+  font:500 13px/1 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  padding:10px 14px;border-radius:999px;text-decoration:none;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:0 4px 16px rgba(0,0,0,.14);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.zz-back:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+@media (prefers-reduced-motion: reduce){.zz-back{transition:none}}
+</style>
+</body>
+</html>
